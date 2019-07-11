@@ -1,5 +1,6 @@
 {
   "projects": {
-    "toeic": "toeic-new2019"
+    "toeic": "toeic-new2019",
+    "default": "toeic-new2019"
   }
 }
