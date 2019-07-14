@@ -1,0 +1,23 @@
+{
+  "name": "toeic-learning",
+  "version": "1.0.0",
+  "description": "toeic-learning 1",
+  "main": "App.js",
+  "scripts": {
+    "build": "npm install --prefix \"app\"  && npm run build --prefix \"app\" ",
+    "deploy":"firebase deploy --token \"1/FjWaMpStkHgVIWJmfgiKbAMPb2lCDgomASPpwi9qsZ_RWOaGjZGk_9ZsDE5fqlex\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phuchieuct93abc/toeic-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phuchieuct93abc/toeic-learning/issues"
+  },
+  "homepage": "https://github.com/phuchieuct93abc/toeic-learning#readme",
+  "dependencies": {
+    "firebase-tools": "^7.1.0"
+  }
+}
