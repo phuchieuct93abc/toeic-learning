@@ -5,7 +5,7 @@
   "main": "App.js",
   "scripts": {
     "build": "npm install --prefix \"app\"  && npm run build --prefix \"app\" ",
-    "deploy":"firebase deploy --token \"1/FjWaMpStkHgVIWJmfgiKbAMPb2lCDgomASPpwi9qsZ_RWOaGjZGk_9ZsDE5fqlex\""
+    "deploy": "firebase deploy --token \"1/FjWaMpStkHgVIWJmfgiKbAMPb2lCDgomASPpwi9qsZ_RWOaGjZGk_9ZsDE5fqlex\""
   },
   "repository": {
     "type": "git",
