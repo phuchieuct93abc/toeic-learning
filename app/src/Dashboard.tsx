@@ -1,5 +1,7 @@
 import * as React from "react";
 import {Card} from 'antd';
+import Row from "antd/lib/grid/row";
+import Col from "antd/lib/grid/col";
 
 export interface TestData {
     name: string,
@@ -9,7 +11,6 @@ export interface TestData {
 
 export default class Dashboard extends React.Component {
 
-    // @ts-ignore
     private tests: TestData[] = [
         {
             description: "Desc 1",
@@ -40,21 +41,30 @@ export default class Dashboard extends React.Component {
             id: 5,
             name: "Name 5"
 
+        },
+        {
+            description: "Desc 6",
+            id: 6,
+            name: "Name 6"
+
         }];
 
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         return (
             <div style={{background: '#ECECEC', padding: '30px'}}>
+                <Row gutter={16}>
                 {this.tests.map(t => {
 
                     return (
-                        <Card title={t.name} key={t.id} style={{width: 300}}>
+                        <Col  key={t.id} span="8" style={{padding:'8px'}}>
+                        <Card title={t.name} >
                             {t.description}
                         </Card>
+                        </Col>
                     )
                 })}
-
+                </Row>
 
             </div>
         )
