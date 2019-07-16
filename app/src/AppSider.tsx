@@ -1,6 +1,7 @@
 import React from 'react';
-import { Icon, Layout, Menu } from 'antd';
-const { Sider } = Layout;
+import {Icon, Layout, Menu} from 'antd';
+
+const {Sider} = Layout;
 const { SubMenu } = Menu;
 
 
