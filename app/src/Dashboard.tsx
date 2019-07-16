@@ -22,7 +22,7 @@ export default class Dashboard extends React.Component {
             id: 2,
             name: "Name 2"
 
-        }, ,
+        },
         {
             description: "Desc 3",
             id: 3,
@@ -42,9 +42,6 @@ export default class Dashboard extends React.Component {
 
         }];
 
-    constructor(props: any) {
-        super(props);
-    }
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         return (
