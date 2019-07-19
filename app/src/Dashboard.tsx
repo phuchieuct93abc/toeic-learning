@@ -1,13 +1,12 @@
 import * as React from "react";
 import {Card} from 'antd';
-import Row from "antd/lib/grid/row";
-import Col from "antd/lib/grid/col";
-
+import './Dashboard.css'
 export interface TestData {
     name: string,
     description: string,
     id: number
 }
+
 
 export default class Dashboard extends React.Component {
 
@@ -52,19 +51,15 @@ export default class Dashboard extends React.Component {
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         return (
-            <div style={{background: '#ECECEC', padding: '30px'}}>
-                <Row gutter={16}>
+            <div style={{background: '#ECECEC', padding: '30px'}} className={'dashboard'}>
                 {this.tests.map(t => {
 
                     return (
-                        <Col  key={t.id} span="8" style={{padding:'8px'}}>
-                        <Card title={t.name} >
+                        <Card key={t.id} title={t.name} >
                             {t.description}
                         </Card>
-                        </Col>
                     )
                 })}
-                </Row>
 
             </div>
         )
