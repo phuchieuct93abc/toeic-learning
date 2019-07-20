@@ -2,7 +2,6 @@ import * as React from "react";
 import {Card} from 'antd';
 import './Dashboard.css'
 import {Link} from "react-router-dom";
-import TestService from "./services/TestService";
 export interface TestData {
     name: string,
     description: string,

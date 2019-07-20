@@ -32,7 +32,7 @@ export default class Test extends React.Component<{ match: any }, { testId: numb
 
     componentDidMount(): void {
         // @ts-ignore
-        this.setState({testId: parseInt(this.props.match.params.testId), testData: null})
+        this.setState({testId: parseInt(this.props.match.params.testId), testData: null});
         this.initData();
 
 
@@ -41,28 +41,28 @@ export default class Test extends React.Component<{ match: any }, { testId: numb
     componentWillReceiveProps(nextProps: Readonly<{ match: any }>, nextContext: any): void {
 
         // @ts-ignore
-        this.setState({testId: parseInt(nextProps.match.params.testId), testData: null})
+        this.setState({testId: parseInt(nextProps.match.params.testId), testData: null});
         this.initData();
     }
 
     hint() {
         if (this.state.testData) {
-            let htmlData = {__html: this.state.testData.hint}
-            return (<div dangerouslySetInnerHTML={htmlData}></div>)
+            let htmlData = {__html: this.state.testData.hint};
+            return (<div dangerouslySetInnerHTML={htmlData}/>)
         }
     }
 
     renderMp3() {
         if (this.state.mp3) {
             return (<audio controls autoPlay style={{width: "100%"}}>
-                <source src={this.state.mp3} type="audio/mpeg"></source>
+                <source src={this.state.mp3} type="audio/mpeg"/>
             </audio>)
         }
     }
 
     renderImage() {
         if (this.state.testData && this.state.testData.image) {
-            return (<img src={this.testService.getImage(this.state.testData.image)}/>)
+            return (<img src={this.testService.getImage(this.state.testData.image)} alt={this.state.testData.image}/>)
         }
     }
 
