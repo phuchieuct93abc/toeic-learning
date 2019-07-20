@@ -4,7 +4,7 @@ import React from 'react';
 import './App.css';
 import AppSider from "./AppSider";
 import Dashboard from "./Dashboard";
-import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import Test from "./Test";
 
 const {Header, Content} = Layout;
