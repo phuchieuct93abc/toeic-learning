@@ -1,13 +1,13 @@
 import * as React from "react";
-import {Link} from "react-router-dom";
 import TestService from "./services/TestService";
-import {Button, Radio} from "antd";
+import {Button} from "antd";
 import {TestModel} from "./models/TestModel";
 import Popover from "antd/lib/popover";
 import "./test.css"
-import Icon from "antd/lib/icon";
+import Navigator from './Navigator';
+import QuestionComponent from "./QuestionComponent";
 
-export default class Test extends React.Component<{ match: any }, { testId: number, testData?: TestModel, mp3?: string }> {
+export default class Test extends React.Component<{ match: any, testId: number }, { testData?: TestModel, mp3?: string }> {
 
     private testService: TestService;
 
@@ -15,34 +15,36 @@ export default class Test extends React.Component<{ match: any }, { testId: numb
     constructor(props: any) {
         super(props);
         this.testService = new TestService();
-        this.state = {
-            testId: 0
-        }
+        this.state = {}
 
     }
 
-    initData() {
-        let testGroup = this.props.match.params.testGroup;
-        let testId = this.props.match.params.testId;
+
+    initData(props:any) {
+        let testGroup = props.match.params.testGroup;
+        let testId = props.match.params.testId;
         this.testService.getTestsById(testGroup, testId).then(data => {
 
-            this.setState({testData: data, mp3: this.testService.getMp3(testGroup, testId)})
+            this.setState(() => ({
+                testData: data
+            }))
         });
     }
 
     componentDidMount(): void {
         // @ts-ignore
         this.setState({testId: parseInt(this.props.match.params.testId), testData: null});
-        this.initData();
+        this.initData(this.props);
 
 
     }
+
 
     componentWillReceiveProps(nextProps: Readonly<{ match: any }>, nextContext: any): void {
 
         // @ts-ignore
         this.setState({testId: parseInt(nextProps.match.params.testId), testData: null});
-        this.initData();
+        this.initData(nextProps);
     }
 
     hint() {
@@ -53,15 +55,16 @@ export default class Test extends React.Component<{ match: any }, { testId: numb
     }
 
     renderMp3() {
-        if (this.state.mp3) {
+        if (this.state.testData && this.state.testData.mp3) {
             return (<audio controls autoPlay style={{width: "100%"}}>
-                <source src={this.state.mp3} type="audio/mpeg"/>
+                <source src={this.testService.getMp3(this.state.testData.mp3)} type="audio/mpeg"/>
             </audio>)
         }
     }
 
     renderImage() {
         if (this.state.testData && this.state.testData.image) {
+            console.log(this.state.testData.image)
             return (<img src={this.testService.getImage(this.state.testData.image)} alt={this.state.testData.image}/>)
         }
     }
@@ -69,65 +72,43 @@ export default class Test extends React.Component<{ match: any }, { testId: numb
     renderAnswer() {
         if (!this.state.testData) return;
         return (<div>
-            <Radio.Group size="large">
-                {this.state.testData.questions[0].options.map((q, index) => {
-                    return (<Radio style={{display: "block"}} value={index}>{["A", "B", "C", "D"][index]}. {q}</Radio>
-                    )
-                })}
+                {this.state.testData.questions.map((q, index) => {
+                    return (<QuestionComponent key={index} question={q}/>)
+                })
+                }
 
-            </Radio.Group>
-
-        </div>)
+            </div>
+        )
     }
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
 
-        if (this.state.testData) {
-            return (
-
-                <div style={{overflow: "auto", maxHeight: "100%"}}>
-                    <div className={"test-wrapper"}>
-                        <div>
-                            {this.renderImage()}
-                            {this.renderMp3()}
-
-                        </div>
-
-
-                        <div>
-
-                            {this.renderAnswer()}
-                            <Popover content={this.hint()} title="Hint" trigger="click">
-                                <Button>Hover me</Button>
-                            </Popover>
-
-                        </div>
-
-
-                        <Button.Group size="large" className={"navigator"}>
-
-
-                            <Link to={(this.state.testId - 1).toString()}>
-                                <Button type="primary">
-                                    <Icon type="left"/>
-                                    Backward
-                                </Button> </Link>
-
-                            <Link to={(this.state.testId + 1).toString()} style={{float: "right"}}>
-                                <Button type="primary">
-                                    Forward
-                                    <Icon type="right"/>
-                                </Button>
-                            </Link>
-                        </Button.Group>
-
+        const testId = parseInt(this.props.match.params.testId);
+        return (
+            <div style={{overflow: "auto", height: "100%"}}>
+                <div className={"test-wrapper"}>
+                    <div>
+                        {this.renderImage()}
+                        {this.renderMp3()}
 
                     </div>
-                </div>
 
-            )
-        } else {
-            return (<div>Loading</div>)
-        }
+
+                    <div>
+
+                        {this.renderAnswer()}
+                        <Popover content={this.hint()} title="Hint" trigger="click">
+                            <Button>Hover me</Button>
+                        </Popover>
+
+                    </div>
+
+                    <Navigator prevId={testId - 1} nextId={testId + 1}/>
+
+
+                </div>
+            </div>
+
+        )
     }
 }

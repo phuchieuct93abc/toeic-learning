@@ -2,6 +2,7 @@
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2,minmax(200px,400px));
+    grid-template-rows: minmax(200px,auto) auto;
 }
 .navigator{
     grid-column: 1/3;
