@@ -4,9 +4,10 @@ import React from 'react';
 import './App.css';
 import AppSider from "./AppSider";
 import Dashboard from "./Dashboard";
+import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
+import Test from "./Test";
 
 const {Header, Content} = Layout;
-
 export default class App extends React.Component<{}, {}> {
 
     render() {
@@ -41,7 +42,11 @@ export default class App extends React.Component<{}, {}> {
                                 minHeight: 280,
                             }}
                         >
-                            <Dashboard/>
+                            <Router>
+                                <Route path="/dashboard" component={Dashboard} />
+                                <Route path="/test/:testGroup/:testId" component={Test} />
+                                {/*<Redirect from="/" exact to="/dashboard"></Redirect>*/}
+                            </Router>
                         </Content>
                     </Layout>
                 </Layout>

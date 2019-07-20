@@ -1,6 +1,8 @@
 import * as React from "react";
 import {Card} from 'antd';
 import './Dashboard.css'
+import {Link} from "react-router-dom";
+import TestService from "./services/TestService";
 export interface TestData {
     name: string,
     description: string,
@@ -49,15 +51,24 @@ export default class Dashboard extends React.Component {
         }];
 
 
+    componentDidMount(): void {
+        // let testService = new TestService();
+        // testService.getAllName().then(names=>{
+        //     console.log(names)
+        // })
+    }
+
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         return (
             <div style={{background: '#ECECEC', padding: '30px'}} className={'dashboard'}>
                 {this.tests.map(t => {
 
                     return (
-                        <Card key={t.id} title={t.name} >
+                        <Link to={`/test/${t.id}/1`} key={t.id}>
+                        <Card  title={t.name} >
                             {t.description}
                         </Card>
+                        </Link>
                     )
                 })}
 
