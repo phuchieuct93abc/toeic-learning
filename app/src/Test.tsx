@@ -25,6 +25,8 @@ export default class Test extends React.Component<{ match: any, testId: number }
         let testId = props.match.params.testId;
         this.testService.getTestsById(testGroup, testId).then(data => {
 
+            console.log(testGroup, testId, data);
+
             this.setState(() => ({
                 testData: data
             }))
@@ -87,8 +89,8 @@ export default class Test extends React.Component<{ match: any, testId: number }
         return (
             <div style={{overflow: "auto", height: "100%"}}>
                 <div className={"test-wrapper"}>
-                    <div>
-                        {this.renderImage()}
+                    <div className={"image-audio"}>
+                        <div> {this.renderImage()}</div>
                         {this.renderMp3()}
 
                     </div>
@@ -98,7 +100,7 @@ export default class Test extends React.Component<{ match: any, testId: number }
 
                         {this.renderAnswer()}
                         <Popover content={this.hint()} title="Hint" trigger="click">
-                            <Button>Hover me</Button>
+                            <Button>Hint</Button>
                         </Popover>
 
                     </div>

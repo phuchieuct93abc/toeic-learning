@@ -47,7 +47,45 @@ export default class Dashboard extends React.Component {
             id: 6,
             name: "Name 6"
 
-        }];
+        },
+        {
+            description: "Desc 7",
+            id: 7,
+            name: "Name 7"
+
+        },
+        {
+            description: "Desc 8",
+            id: 8,
+            name: "Name 8"
+
+        },
+        {
+            description: "Desc 9",
+            id: 9,
+            name: "Name 9"
+
+        },
+        {
+            description: "Desc 10",
+            id: 10,
+            name: "Name 10"
+
+        },
+        {
+            description: "Desc 11",
+            id: 11,
+            name: "Name 11"
+
+        },
+
+
+
+
+
+
+
+    ];
 
 
     componentDidMount(): void {

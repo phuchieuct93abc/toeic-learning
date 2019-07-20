@@ -5,10 +5,14 @@ export interface Question {
     question: string,
     questionOrder: number,
     shown: number
+    id:string,
+
 
 }
 
 export interface TestModel {
+    groupId:string,
+    id:string,
     description: string,
     hint: string,
     image: string,

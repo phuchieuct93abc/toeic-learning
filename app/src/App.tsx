@@ -43,9 +43,10 @@ export default class App extends React.Component<{}, {}> {
                             }}
                         >
                             <Router>
-                                <Route path="/dashboard" component={Dashboard} />
+
+                                <Route path="/" exact={true} component={Dashboard} />
                                 <Route path="/test/:testGroup/:testId" component={Test} />
-                                <Redirect from="/" exact to="/dashboard"></Redirect>
+
                             </Router>
                         </Content>
                     </Layout>
