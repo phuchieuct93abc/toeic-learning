@@ -16,40 +16,40 @@ export default class TestService {
         "New Economy 2018 - Test 09": "9",
         "New Economy 2018 - Test 10": "10",
         "Hacker New TOEIC - Test 02": "11",
-    }
+    };
 
-    constructor() {
-        // this.getAllData().then(data => {
-        //     // let result = data.sort((a, b) => a.testName.localeCompare(b.testName))
-        //     //     .sort((a, b) => a.image.localeCompare(b.image))
-        //     // result.forEach((r, index) => r.id = (index+1) + "");
-        //     // console.log(result)
-        //     // this.save(result)
-        //     data.forEach(test => {
-        //         // @ts-ignore
-        //         test.questions.forEach(q => {
-        //
-        //             // @ts-ignore
-        //             let id = /(\d+)./g.exec(q.question)[0];
-        //             // console.log(id)
-        //             // // @ts-ignore
-        //             // @ts-ignore
-        //             q.id = id;
-        //         })
-        //         test.id = test.questions.map(q => q.id).reduce((a, b) => a + b)
-        //     });
-        //     data.forEach(d => {
-        //         console.log(d.testName)
-        //         d.groupId = this.mapping[d.testName];
-        //     });
-        //     console.log(data)
-        //     let result = data.sort((a, b) => a.groupId.localeCompare(b.groupId))
-        //         .sort((a, b) => a.id.localeCompare(b.id));
-        //
-        //     this.save({Test: result})
-        // });
-
-    }
+    // constructor() {
+    //     this.getAllData().then(data => {
+    //         // let result = data.sort((a, b) => a.testName.localeCompare(b.testName))
+    //         //     .sort((a, b) => a.image.localeCompare(b.image))
+    //         // result.forEach((r, index) => r.id = (index+1) + "");
+    //         // console.log(result)
+    //         // this.save(result)
+    //         data.forEach(test => {
+    //             // @ts-ignore
+    //             test.questions.forEach(q => {
+    //
+    //                 // @ts-ignore
+    //                 let id = /(\d+)./g.exec(q.question)[0];
+    //                 // console.log(id)
+    //                 // // @ts-ignore
+    //                 // @ts-ignore
+    //                 q.id = id;
+    //             })
+    //             test.id = test.questions.map(q => q.id).reduce((a, b) => a + b)
+    //         });
+    //         data.forEach(d => {
+    //             console.log(d.testName)
+    //             d.groupId = this.mapping[d.testName];
+    //         });
+    //         console.log(data)
+    //         let result = data.sort((a, b) => a.groupId.localeCompare(b.groupId))
+    //             .sort((a, b) => a.id.localeCompare(b.id));
+    //
+    //         this.save({Test: result})
+    //     });
+    //
+    // }
 
     save(data: any) {
         if (!data) {
@@ -82,7 +82,7 @@ export default class TestService {
         let data = await this.getAllData();
         return data.find(t => {
 
-                return parseInt(t.groupId) == testGroup && t.id.indexOf(testId + ".") == 0;
+                return t.groupId.toString() === testGroup.toString() && t.id.indexOf(testId + ".") === 0;
 
             }
         )
