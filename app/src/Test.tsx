@@ -20,7 +20,7 @@ export default class Test extends React.Component<{ match: any, testId: number }
     }
 
 
-    initData(props:any) {
+    initData(props: any) {
         let testGroup = props.match.params.testGroup;
         let testId = props.match.params.testId;
         this.testService.getTestsById(testGroup, testId).then(data => {

@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1908fa5-9218-4ec1-965e-1000a8107a0f" name="Default Changelist" comment="Remove unused">
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Navigator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/QuestionComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/models/TestModel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/models/TestModel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/services/TestService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/services/TestService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/Test.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="88" column="38" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+            <state relative-caret-position="290">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -285,7 +276,7 @@
       <workItem from="1563600429329" duration="11000" />
       <workItem from="1563601549359" duration="245000" />
       <workItem from="1563611768629" duration="136000" />
-      <workItem from="1563614211144" duration="2880000" />
+      <workItem from="1563614211144" duration="3024000" />
     </task>
     <task id="LOCAL-00001" summary="Remove unused">
       <created>1563237675210</created>
@@ -305,7 +296,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17749000" />
+    <option name="totallyTimeSpent" value="17893000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -447,8 +438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Test.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="88" column="38" selection-start-line="88" selection-start-column="38" selection-end-line="88" selection-end-column="38" />
+        <state relative-caret-position="290">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
