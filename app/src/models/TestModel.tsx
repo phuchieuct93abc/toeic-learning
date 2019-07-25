@@ -15,6 +15,7 @@ export interface TestModel {
     id:string,
     description: string,
     hint: string,
+    hintVn:string,
     image: string,
     mp3: string,
     part: number,

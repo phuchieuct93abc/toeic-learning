@@ -23,3 +23,6 @@ img{
 .image-audio >audio{
     height: 50px;
 }
+.hint b{
+    display: block;
+}

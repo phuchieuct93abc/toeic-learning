@@ -1,21 +1,20 @@
 import * as React from "react";
-import TestService from "./services/TestService";
-import {Button} from "antd";
-import {TestModel} from "./models/TestModel";
-import Popover from "antd/lib/popover";
-import "./test.css"
-import Navigator from './Navigator';
+import TestService from "../services/TestService";
+import {TestModel} from "../models/TestModel";
+import "../styles/test.css"
 import QuestionComponent from "./QuestionComponent";
+import Navigator from "./Navigator"
+import Hint from "./Hint";
 
-export default class Test extends React.Component<{ match: any, testId: number }, { testData?: TestModel, mp3?: string }> {
+export default class Test extends React.Component<{ match: any, testId: number }, { testData?: TestModel, mp3?: string, isAllAnswered: boolean }> {
 
-    private testService: TestService;
+    private testService: TestService = new TestService();
 
 
     constructor(props: any) {
         super(props);
         this.testService = new TestService();
-        this.state = {}
+        this.state = {isAllAnswered: false}
 
     }
 
@@ -24,11 +23,9 @@ export default class Test extends React.Component<{ match: any, testId: number }
         let testGroup = props.match.params.testGroup;
         let testId = props.match.params.testId;
         this.testService.getTestsById(testGroup, testId).then(data => {
-
-            console.log(testGroup, testId, data);
-
             this.setState(() => ({
-                testData: data
+                testData: data,
+                isAllAnswered: false
             }))
         });
     }
@@ -73,19 +70,26 @@ export default class Test extends React.Component<{ match: any, testId: number }
 
     renderAnswer() {
         if (!this.state.testData) return;
-        return (<div>
-                {this.state.testData.questions.map((q, index) => {
-                    return (<QuestionComponent key={index} question={q}/>)
-                })
-                }
+        return <div>
+            {
+                this.state.testData.questions.map((q, index) => <QuestionComponent
+                    onSelectAnswer={this.onSelectAnswered.bind(this)} key={index} question={q}/>)
+            }
 
-            </div>
-        )
+        </div>
+
+    }
+
+    onSelectAnswered(p1: boolean, p2: string) {
+        this.setState({isAllAnswered: true})
+
     }
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
 
         const testId = parseInt(this.props.match.params.testId);
+
+        // @ts-ignore
         return (
             <div style={{overflow: "auto", height: "100%"}}>
                 <div className={"test-wrapper"}>
@@ -94,18 +98,16 @@ export default class Test extends React.Component<{ match: any, testId: number }
                         {this.renderMp3()}
 
                     </div>
-
-
                     <div>
 
                         {this.renderAnswer()}
-                        <Popover content={this.hint()} title="Hint" trigger="click">
-                            <Button>Hint</Button>
-                        </Popover>
+                        {this.state.isAllAnswered && this.state.testData &&
+                        <Hint hint={this.state.testData.hint} hintVn={this.state.testData.hintVn}/>
+                        }
 
                     </div>
 
-                    <Navigator prevId={testId - 1} nextId={testId + 1}/>
+                    <Navigator prevId={testId - 1} nextId={testId + 1}></Navigator>
 
 
                 </div>
@@ -114,3 +116,6 @@ export default class Test extends React.Component<{ match: any, testId: number }
         )
     }
 }
+
+
+

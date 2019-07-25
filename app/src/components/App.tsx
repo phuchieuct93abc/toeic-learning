@@ -1,10 +1,10 @@
 import {Breadcrumb, Layout, Menu} from 'antd';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import React from 'react';
-import './App.css';
+import '../styles/App.css';
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import AppSider from "./AppSider";
 import Dashboard from "./Dashboard";
-import {BrowserRouter as Router, Route} from "react-router-dom";
 import Test from "./Test";
 
 const {Header, Content} = Layout;
