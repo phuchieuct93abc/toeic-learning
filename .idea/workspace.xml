@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1908fa5-9218-4ec1-965e-1000a8107a0f" name="Default Changelist" comment="Remove unused">
-      <change afterPath="$PROJECT_DIR$/app/src/components/Hint.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/styles/question.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/AppSider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/AppSider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Navigator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Navigator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/QuestionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/QuestionComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/models/TestModel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/models/TestModel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles/test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/QuestionComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/QuestionComponent.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/Hint.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="32" />
+            <state relative-caret-position="153">
+              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -94,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/components/QuestionComponent.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+            <state relative-caret-position="206">
+              <caret line="13" column="88" selection-start-line="13" selection-start-column="88" selection-end-line="13" selection-end-column="88" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -160,11 +146,11 @@
         <option value="$PROJECT_DIR$/app/src/components/Dashboard.tsx" />
         <option value="$PROJECT_DIR$/app/src/components/App.tsx" />
         <option value="$PROJECT_DIR$/app/src/styles/question.css" />
-        <option value="$PROJECT_DIR$/app/src/components/QuestionComponent.tsx" />
         <option value="$PROJECT_DIR$/app/src/styles/test.css" />
         <option value="$PROJECT_DIR$/app/src/components/Test.tsx" />
         <option value="$PROJECT_DIR$/app/src/models/TestModel.tsx" />
         <option value="$PROJECT_DIR$/app/src/components/Hint.tsx" />
+        <option value="$PROJECT_DIR$/app/src/components/QuestionComponent.tsx" />
       </list>
     </option>
   </component>
@@ -301,7 +287,7 @@
       <workItem from="1563611768629" duration="136000" />
       <workItem from="1563614211144" duration="3909000" />
       <workItem from="1563624848289" duration="5358000" />
-      <workItem from="1564062184449" duration="3479000" />
+      <workItem from="1564062184449" duration="3624000" />
     </task>
     <task id="LOCAL-00001" summary="Remove unused">
       <created>1563237675210</created>
@@ -321,7 +307,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27615000" />
+    <option name="totallyTimeSpent" value="27760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -485,16 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/QuestionComponent.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="16" column="68" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/Test.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -507,8 +483,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/Hint.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="32" />
+        <state relative-caret-position="153">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/QuestionComponent.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="13" column="88" selection-start-line="13" selection-start-column="88" selection-end-line="13" selection-end-column="88" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

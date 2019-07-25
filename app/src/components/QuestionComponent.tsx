@@ -11,7 +11,7 @@ export default class QuestionComponent extends React.Component<{ question: Quest
 
 
     private onSelect(p1: RadioChangeEvent) {
-        let isCorrect = this.props.question.options[p1.target.value].indexOf("key:") == 0;
+        let isCorrect = this.props.question.options[p1.target.value].indexOf("key:") === 0;
         this.setState({isCorrect, isAnswered: true});
 
         this.props.onSelectAnswer(isCorrect,this.props.question.id);
