@@ -5,6 +5,8 @@ import "../styles/test.css"
 import QuestionComponent from "./QuestionComponent";
 import Navigator from "./Navigator"
 import Hint from "./Hint";
+import QuestionMedia from "./QuestionMedia";
+
 
 export default class Test extends React.Component<{ match: any, testId: number }, { testData?: TestModel, mp3?: string, isAllAnswered: boolean }> {
 
@@ -53,20 +55,6 @@ export default class Test extends React.Component<{ match: any, testId: number }
         }
     }
 
-    renderMp3() {
-        if (this.state.testData && this.state.testData.mp3) {
-            return (<audio controls autoPlay style={{width: "100%"}}>
-                <source src={this.testService.getMp3(this.state.testData.mp3)} type="audio/mpeg"/>
-            </audio>)
-        }
-    }
-
-    renderImage() {
-        if (this.state.testData && this.state.testData.image) {
-            console.log(this.state.testData.image)
-            return (<img src={this.testService.getImage(this.state.testData.image)} alt={this.state.testData.image}/>)
-        }
-    }
 
     renderAnswer() {
         if (!this.state.testData) return;
@@ -93,19 +81,20 @@ export default class Test extends React.Component<{ match: any, testId: number }
         return (
             <div style={{overflow: "auto", height: "100%"}}>
                 <div className={"test-wrapper"}>
+
                     <div className={"image-audio"}>
-                        <div> {this.renderImage()}</div>
-                        {this.renderMp3()}
+                        {this.state.testData && <QuestionMedia audioName={this.state.testData.mp3}
+                                                               imageName={this.state.testData.image}/>}
 
                     </div>
                     <div>
-
                         {this.renderAnswer()}
                         {this.state.isAllAnswered && this.state.testData &&
                         <Hint hint={this.state.testData.hint} hintVn={this.state.testData.hintVn}/>
                         }
 
                     </div>
+
 
                     <Navigator prevId={testId - 1} nextId={testId + 1}></Navigator>
 

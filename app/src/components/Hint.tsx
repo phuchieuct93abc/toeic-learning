@@ -6,8 +6,9 @@ import Tabs from "antd/lib/tabs";
 const {TabPane} = Tabs;
 export default class Hint extends React.Component<{ hint: string, hintVn: string }> {
     hint() {
-        let hintHtml = {__html: this.props.hint};
-        let hintVNHtml = {__html: this.props.hintVn};
+        let commingSoon = "Coming soon";
+        let hintHtml = {__html: this.props.hint || commingSoon};
+        let hintVNHtml = {__html: this.props.hintVn || commingSoon};
 
         return (<Tabs defaultActiveKey="1">
             <TabPane tab="English" key="1">
