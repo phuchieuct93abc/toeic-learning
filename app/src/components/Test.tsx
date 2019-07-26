@@ -34,7 +34,7 @@ export default class Test extends React.Component<{ match: any, testId: number }
 
     componentDidMount(): void {
         // @ts-ignore
-        this.setState({testId: parseInt(this.props.match.params.testId), testData: null});
+        this.setState({testId: parseInt(this.props.match.params.testId),isAllAnswered:false});
         this.initData(this.props);
 
 
@@ -44,7 +44,7 @@ export default class Test extends React.Component<{ match: any, testId: number }
     componentWillReceiveProps(nextProps: Readonly<{ match: any }>, nextContext: any): void {
 
         // @ts-ignore
-        this.setState({testId: parseInt(nextProps.match.params.testId), testData: null});
+        this.setState({testId: parseInt(nextProps.match.params.testId),isAllAnswered:false});
         this.initData(nextProps);
     }
 
@@ -58,10 +58,10 @@ export default class Test extends React.Component<{ match: any, testId: number }
 
     renderAnswer() {
         if (!this.state.testData) return;
-        return <div>
+        return <div className={"question-wrapper"}>
             {
                 this.state.testData.questions.map((q, index) => <QuestionComponent
-                    onSelectAnswer={this.onSelectAnswered.bind(this)} key={index} question={q}/>)
+                    onSelectAnswer={this.onSelectAnswered.bind(this)} key={q.id} question={q}/>)
             }
 
         </div>
@@ -82,12 +82,12 @@ export default class Test extends React.Component<{ match: any, testId: number }
             <div style={{overflow: "auto", height: "100%"}}>
                 <div className={"test-wrapper"}>
 
-                    <div className={"image-audio"}>
+                    <div className={"image-audio overflow"}>
                         {this.state.testData && <QuestionMedia audioName={this.state.testData.mp3}
                                                                imageName={this.state.testData.image}/>}
 
                     </div>
-                    <div>
+                    <div className={"overflow"}>
                         {this.renderAnswer()}
                         {this.state.isAllAnswered && this.state.testData &&
                         <Hint hint={this.state.testData.hint} hintVn={this.state.testData.hintVn}/>

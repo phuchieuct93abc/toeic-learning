@@ -8,14 +8,11 @@ export default class QuestionMedia extends React.Component<{ audioName: string, 
 
     renderImage() {
         if (this.props.imageName) {
-            return (
-                <div style={{flex: 1}}>
-                    <img src={this.testService.getImage(this.props.imageName)}
-                         alt={this.props.imageName}/>
-                </div>)
-
-
+            return (<img src={this.testService.getImage(this.props.imageName)}
+                         alt={this.props.imageName}/>)
         }
+
+
     }
 
     renderMp3() {
@@ -37,7 +34,7 @@ export default class QuestionMedia extends React.Component<{ audioName: string, 
 
     render() {
         return (
-            <div style={{display: "flex", flexDirection: "column",height:"100%",padding:1}}>
+            <div style={{display: "flex", flexDirection: "column", height: "100%", padding: 1}}>
                 {this.renderImage()}
                 {this.renderMp3()}
             </div>

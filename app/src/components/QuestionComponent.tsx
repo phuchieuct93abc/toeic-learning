@@ -20,7 +20,7 @@ export default class QuestionComponent extends React.Component<{ question: Quest
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
 
         let displayAnswer = (answer: string) => answer.replace("key:", "");
-        let displayQuestion = (question: string) => question.length <5 ? "Listen the audio and choose the correct answer below" : question;
+        let displayQuestion = (question: string) => question.length <5 ? question +" Listen the audio and choose the correct answer below" : question;
         let className = "";
         if (this.state.isAnswered) {
 
@@ -28,7 +28,7 @@ export default class QuestionComponent extends React.Component<{ question: Quest
         }
 
         return (
-            <Card className={className} title={displayQuestion(this.props.question.question)} style={{marginBottom: 10}}>
+            <Card className={className} title={displayQuestion(this.props.question.question)} >
                 <Radio.Group size="large" disabled={this.state.isAnswered}>
                     {this.props.question.options.map((q, index) => {
                         return (<Radio onChange={this.onSelect.bind(this)} key={index} style={{display: "block"}}
